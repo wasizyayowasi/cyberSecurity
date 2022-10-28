@@ -19,6 +19,12 @@
     <Filter Include="ヘッダー ファイル\field">
       <UniqueIdentifier>{7683b529-53a2-40c3-8cf9-a51df657fd18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object">
+      <UniqueIdentifier>{04898d26-f8e0-48c9-861d-2b55343bf270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Object">
+      <UniqueIdentifier>{ff3153a2-d569-442a-b7bc-6d9d9af58e86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +48,9 @@
     <ClCompile Include="BottomRightOfField.cpp">
       <Filter>ソース ファイル\field</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -64,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="BottomRightOfField.h">
       <Filter>ヘッダー ファイル\field</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

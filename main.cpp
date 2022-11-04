@@ -1,10 +1,11 @@
 #include "DxLib.h"
 #include "game.h"
 
+#include "SceneManager.h"
 #include "Player.h"
 
 // プログラムは WinMain から始まります
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
 	//windowモードの設定
 	ChangeWindowMode(Game::kWindowMode);
@@ -18,9 +19,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;			// エラーが起きたら直ちに終了
 	}
 
-	Player player;
+	SceneManager scene;
+	//Player player;
 
-	player.init();
+	//player.init();
+	scene.init();
 
 	//ダブルバッファモード
 	SetDrawScreen(DX_SCREEN_BACK);
@@ -31,9 +34,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//画面のクリア
 		ClearDrawScreen();
 		
-		player.update();
+		scene.update();
+		scene.draw();
 
-		player.draw();
+		/*player.update();
+		player.draw();*/
 
 
 		//裏画面を表画面に切り替える
@@ -49,7 +54,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	}
 
-	player.end();
+	scene.end();
+	/*player.end();*/
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

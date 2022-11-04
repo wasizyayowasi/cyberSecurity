@@ -155,7 +155,13 @@
     <ClCompile Include="BottomRightOfField.cpp" />
     <ClCompile Include="FieldBase.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pad.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="SelectMenu.cpp" />
     <ClCompile Include="TopLeftOfField.cpp" />
     <ClCompile Include="TopRightOfField.cpp" />
     <ClCompile Include="Vec2.cpp" />
@@ -165,7 +171,13 @@
     <ClInclude Include="BottomRightOfField.h" />
     <ClInclude Include="FieldBase.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="Pad.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="SelectMenu.h" />
     <ClInclude Include="TopLeftOfField.h" />
     <ClInclude Include="TopRightOfField.h" />
     <ClInclude Include="Vec2.h" />

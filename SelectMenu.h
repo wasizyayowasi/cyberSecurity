@@ -24,6 +24,7 @@ public:
 	//表示位置の設定
 	void setPos(float x, float y);
 	void setPos(Vec2 vec);
+
 	//メニュー項目の追加
 	void addItem(const char* text);
 

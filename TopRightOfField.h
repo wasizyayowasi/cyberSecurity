@@ -6,9 +6,6 @@ public:
 	TopRightOfField();
 	~TopRightOfField();
 
-	void init();
-	void end();
-	void update();
 	void draw();
 
 private:

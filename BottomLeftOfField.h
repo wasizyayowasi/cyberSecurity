@@ -6,9 +6,7 @@ public:
 	BottomLeftOfField();
 	~BottomLeftOfField();
 
-	void init();
-	void end();
-	void update();
+	
 	void draw();
 
 private:

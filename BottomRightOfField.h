@@ -6,9 +6,6 @@ public:
 	BottomRightOfField();
 	~BottomRightOfField();
 
-	void init();
-	void end();
-	void update();
 	void draw();
 
 private:

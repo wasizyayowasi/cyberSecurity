@@ -14,7 +14,7 @@ public:
 	void end();
 
 	//更新
-	void update();
+	int update();
 	//描画
 	void draw();
 
@@ -31,6 +31,9 @@ public:
 	//ウインドウサイズの取得
 	int getWindowWidth();
 	int getWindowHeight();
+
+private:
+	int m_num;
 
 private:
 	class Item {
@@ -58,7 +61,7 @@ private:
 		virtual ~Cursor();
 
 		//更新
-		void update();
+		int update();
 		//表示
 		void draw();
 

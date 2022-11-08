@@ -47,7 +47,7 @@ SelectMenu::Cursor::~Cursor() {
 
 }
 
-void SelectMenu::Cursor::update() {
+int SelectMenu::Cursor::update() {
 	if (Pad::isPress(PAD_INPUT_UP))
 	{
 		if (m_repeatUp <= 0) {
@@ -91,12 +91,14 @@ void SelectMenu::Cursor::update() {
 	else {
 		m_repeatDown = 0;
 	}
+	return m_selectIndex;
 }
 
 void SelectMenu::Cursor::draw() {
 	int posX = m_menuPos.x;
 	int posY = m_menuPos.y + kMenuItemInterval * m_selectIndex;
 
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", m_selectIndex);
 	DrawBox(posX, posY, posX + m_size.x, posY + m_size.y, GetColor(255, 0, 0), false);
 }
 
@@ -122,8 +124,9 @@ void SelectMenu::end() {
 	m_pItem.clear();
 }
 
-void SelectMenu::update() {
-	m_cursor.update();
+int SelectMenu::update() {
+	m_num = m_cursor.update();
+	return m_num;
 }
 
 void SelectMenu::draw() {

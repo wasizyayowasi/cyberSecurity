@@ -158,8 +158,10 @@
     <ClCompile Include="Pad.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="SceneEnd.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneSetting.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SelectMenu.cpp" />
     <ClCompile Include="TopLeftOfField.cpp" />
@@ -174,8 +176,10 @@
     <ClInclude Include="Pad.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneEnd.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneSetting.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SelectMenu.h" />
     <ClInclude Include="TopLeftOfField.h" />

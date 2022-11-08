@@ -10,7 +10,7 @@ void SceneTitle::init()
 	m_menu.addItem("起動");
 	m_menu.addItem("設定");
 	m_menu.addItem("終了");
-	m_menu.addItem("デバッグ");
+	//m_menu.addItem("デバッグ");
 
 	m_menu.setPos(800, 500);
 
@@ -21,16 +21,26 @@ void SceneTitle::end() {
 	m_menu.end();
 }
 
-void SceneTitle::update()
+int SceneTitle::update()
 {
+	m_num = m_menu.update();
 
-	m_menu.update();
-
-	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
-	if (padState & PAD_INPUT_1)
-	{
-		m_isEnd = true;
+	if (Pad::isPress(PAD_INPUT_1)) {
+		switch (m_num) {
+		case 0:
+			m_isEnd = true;
+			return 1;
+		case 1:
+			m_isEnd = true;
+			return 2;
+		case 2:
+			m_isEnd = true;
+			return 3;
+		default:
+			return 0;
+		}
 	}
+	return 0;
 }
 
 void SceneTitle::draw()

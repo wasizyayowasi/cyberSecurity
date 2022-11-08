@@ -98,8 +98,7 @@ void SelectMenu::Cursor::draw() {
 	int posX = m_menuPos.x;
 	int posY = m_menuPos.y + kMenuItemInterval * m_selectIndex;
 
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", m_selectIndex);
-	DrawBox(posX, posY, posX + m_size.x, posY + m_size.y, GetColor(255, 0, 0), false);
+	DrawBox(posX - 10, posY, posX - 5, posY + 5, GetColor(255, 255, 255), true);
 }
 
 //====================================================//

@@ -1,13 +1,13 @@
 #pragma once
 
-class ScenePose
+class ScenePause
 {
 public:
-	ScenePose()
+	ScenePause()
 	{
 		m_isEnd = false;
 	}
-	virtual ~ScenePose() {}
+	virtual ~ScenePause() {}
 
 
 	virtual void init();

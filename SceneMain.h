@@ -1,7 +1,7 @@
 #pragma once
 #include "SceneBase.h"
 #include "Player.h"
-#include "ScenePose.h"
+#include "ScenePause.h"
 
 class SceneMain 
 {
@@ -31,5 +31,5 @@ private:
 
 	Player m_player;
 
-	ScenePose m_scenePose;
+	ScenePause m_scenePose;
 };

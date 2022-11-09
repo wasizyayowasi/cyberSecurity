@@ -39,6 +39,7 @@ void SceneManager::init(SceneKind kind) {
 		break;
 	}
 }
+
 void SceneManager::end() {
 	switch (m_kind)
 	{
@@ -62,6 +63,7 @@ void SceneManager::end() {
 		break;
 	}
 }
+
 void SceneManager::update() {
 	Pad::update();
 
@@ -81,7 +83,9 @@ void SceneManager::update() {
 				m_kind = SceneManager::kSceneKindSetting;
 				break;
 			case 3:
-				m_kind = SceneManager::kSceneKindEnd;
+
+				DxLib_End();
+				//m_kind = SceneManager::kSceneKindEnd;
 				break;
 		}
 		isEnd = m_title.isEnd();
@@ -95,7 +99,6 @@ void SceneManager::update() {
 			break;
 		case 1:
 			m_kind = SceneManager::kSceneKindPose;
-			DrawString(0, 15, "1", GetColor(255, 255, 255));
 			break;
 		default:
 			assert(false);

@@ -5,7 +5,7 @@
 #include "SceneMain.h"
 #include "SceneSetting.h"
 #include "SceneEnd.h"
-#include "ScenePose.h"
+#include "ScenePause.h"
 
 class SceneManager {
 public:
@@ -47,5 +47,5 @@ private:
 
 	SceneEnd m_end;
 
-	ScenePose m_scenePose;
+	ScenePause m_scenePose;
 };

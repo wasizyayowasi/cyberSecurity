@@ -1,17 +1,17 @@
-#include "ScenePose.h"
+#include "ScenePause.h"
 #include "DxLib.h"
 #include "Pad.h"
 
-void ScenePose::init()
+void ScenePause::init()
 {
 	m_isEnd = false;
 }
 
-void ScenePose::end() {
+void ScenePause::end() {
 	
 }
 
-int ScenePose::update()
+int ScenePause::update()
 {
 	DrawString(0, 30, "2", GetColor(255, 255, 255));
 	if (Pad::isPress(PAD_INPUT_8)) {
@@ -21,7 +21,7 @@ int ScenePose::update()
 	return 0;
 }
 
-void ScenePose::draw()
+void ScenePause::draw()
 {
 	DrawString(0, 0, "É|Å[ÉYâÊñ ", GetColor(255, 255, 255));
 }

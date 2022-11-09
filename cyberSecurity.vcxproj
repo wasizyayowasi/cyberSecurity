@@ -161,7 +161,7 @@
     <ClCompile Include="SceneEnd.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="ScenePose.cpp" />
+    <ClCompile Include="ScenePause.cpp" />
     <ClCompile Include="SceneSetting.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SelectMenu.cpp" />
@@ -180,7 +180,7 @@
     <ClInclude Include="SceneEnd.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="ScenePose.h" />
+    <ClInclude Include="ScenePause.h" />
     <ClInclude Include="SceneSetting.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SelectMenu.h" />

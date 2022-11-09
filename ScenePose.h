@@ -1,14 +1,13 @@
 #pragma once
-#include "SelectMenu.h"
 
-class SceneTitle 
+class ScenePose
 {
 public:
-	SceneTitle()
+	ScenePose()
 	{
 		m_isEnd = false;
 	}
-	virtual ~SceneTitle() {}
+	virtual ~ScenePose() {}
 
 
 	virtual void init();
@@ -19,10 +18,7 @@ public:
 
 	virtual bool isEnd() { return m_isEnd; }
 private:
-	// テキスト表示位置変更
-
-	SelectMenu m_menu;
-
+	
 	int m_num;
 
 	bool m_isEnd;

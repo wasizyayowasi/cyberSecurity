@@ -98,7 +98,9 @@ void SelectMenu::Cursor::draw() {
 	int posX = m_menuPos.x;
 	int posY = m_menuPos.y + kMenuItemInterval * m_selectIndex;
 
-	DrawBox(posX - 10, posY, posX - 5, posY + 5, GetColor(255, 255, 255), true);
+	//DrawBox(posX - 13, posY - 3, posX - 2, posY + 8, GetColor(255, 255, 255), true);
+	//DrawBox(posX - 10, posY, posX - 5, posY + 5, GetColor(255, 0, 0), true);
+	DrawCircle(posX - 10, posY + 8, 5, GetColor(255, 255, 255), true);
 }
 
 //====================================================//
@@ -133,7 +135,9 @@ void SelectMenu::draw() {
 	int width = getWindowWidth();
 	int height = getWindowHeight();
 
-	DrawBox(m_pos.x, m_pos.y, m_pos.x + width, m_pos.y + height, GetColor(64, 64, 64), true);
+	//•¶Žš‚Ì”wŒi
+	//DrawBox(m_pos.x, m_pos.y, m_pos.x + width, m_pos.y + height, GetColor(64, 64, 64), true);
+	
 	for (int i = 0; i < m_pItem.size(); i++) {
 		m_pItem[i]->draw(m_pos.x, m_pos.y + i * kMenuItemInterval);
 	}

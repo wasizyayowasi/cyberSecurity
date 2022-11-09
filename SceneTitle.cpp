@@ -7,6 +7,7 @@ void SceneTitle::init()
 	m_isEnd = false;
 
 	m_menu.init();
+	//CreateFontToHandle(char* FontName, int Size, int Thick, int FontType);
 	m_menu.addItem("‹N“®");
 	m_menu.addItem("İ’è");
 	m_menu.addItem("I—¹");

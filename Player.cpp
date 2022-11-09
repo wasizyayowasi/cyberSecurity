@@ -13,12 +13,7 @@ Player::Player() :
 	m_animeFrame(0),
 	m_animeDirections(0)
 {
-	for (auto& handle : m_handle) {
-		handle = -1;
-	}
-	for (auto& graphicHandle : m_graphicHandle) {
-		graphicHandle = -1;
-	}
+	
 }
 
 Player::~Player() {
@@ -26,6 +21,13 @@ Player::~Player() {
 }
 
 void Player::init() {
+
+	for (auto& handle : m_handle) {
+		handle = -1;
+	}
+	for (auto& graphicHandle : m_graphicHandle) {
+		graphicHandle = -1;
+	}
 
 	LoadDivGraph(kPlayerFilename, kGraphicDivNum, kGraphicDivX, kGraphicDivY, kGraphicSizeX, kGraphicSizeY, m_graphicHandle);
 
@@ -36,11 +38,13 @@ void Player::init() {
 	m_pos.x = 0;
 	m_pos.y = 0;
 }
+
 void Player::end() {
 	for (auto& handle : m_handle) {
 		DeleteGraph(handle);
 	}
 }
+
 void Player::update() {
 	// パッド(もしくはキーボード)からの入力を取得する
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
@@ -84,6 +88,7 @@ void Player::update() {
 	int tempAnimeNo = m_animeFrame / kAnimeChangeFrame;
 	m_animeNo = m_animeDirections * kGraphicDivX + tempAnimeNo;
 }
+
 void Player::draw() {
 	DrawGraph(m_pos.x, m_pos.y, m_handle[m_animeNo], true);
 }

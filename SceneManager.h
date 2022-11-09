@@ -5,6 +5,7 @@
 #include "SceneMain.h"
 #include "SceneSetting.h"
 #include "SceneEnd.h"
+#include "ScenePose.h"
 
 class SceneManager {
 public:
@@ -14,6 +15,8 @@ public:
 
 		kSceneKindSetting,
 		kSceneKindEnd,
+
+		kSceneKindPose,
 
 		kSceneKindNum
 	}SceneKind;
@@ -30,6 +33,8 @@ private:
 
 	int m_sceneNum;
 
+	int m_mainNum;
+
 	SceneKind m_kind;
 
 	SceneBase* m_pScene;
@@ -42,4 +47,5 @@ private:
 
 	SceneEnd m_end;
 
+	ScenePose m_scenePose;
 };

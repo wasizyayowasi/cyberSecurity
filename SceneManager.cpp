@@ -4,7 +4,9 @@
 #include <cassert>
 
 SceneManager::SceneManager() :
-	m_kind(kSceneKindTitle)
+	m_kind(kSceneKindTitle),
+	m_sceneNum(0),
+	m_mainNum(0)
 {
 
 }
@@ -28,6 +30,9 @@ void SceneManager::init(SceneKind kind) {
 	case SceneManager::kSceneKindEnd:
 		m_end.init();
 		break;
+	case SceneManager::kSceneKindPose:
+		m_end.init();
+		break;
 	case SceneManager::kSceneKindNum:
 	default:
 		assert(false);
@@ -47,6 +52,9 @@ void SceneManager::end() {
 		m_setting.end();
 		break;
 	case SceneManager::kSceneKindEnd:
+		m_end.end();
+		break;
+	case SceneManager::kSceneKindPose:
 		m_end.end();
 		break;
 	default:
@@ -79,15 +87,47 @@ void SceneManager::update() {
 		isEnd = m_title.isEnd();
 		break;
 	case SceneManager::kSceneKindMain:
-		m_main.update();
+		m_mainNum = m_main.update();
+		
+		switch (m_mainNum) {
+		case 0:
+			m_kind = SceneManager::kSceneKindMain;
+			break;
+		case 1:
+			m_kind = SceneManager::kSceneKindPose;
+			DrawString(0, 15, "1", GetColor(255, 255, 255));
+			break;
+		default:
+			assert(false);
+			break;
+		}
 		isEnd = m_main.isEnd();
 		break;
+
+	case SceneManager::kSceneKindPose:
+		m_mainNum = m_scenePose.update();
+		switch (m_mainNum) {
+		case 0:
+			m_kind = SceneManager::kSceneKindPose;
+			break;
+		case 1:
+			m_kind = SceneManager::kSceneKindMain;
+			break;
+		default:
+			assert(false);
+			break;
+		}
+		isEnd = m_scenePose.isEnd();
+		break;
+
 	case SceneManager::kSceneKindSetting:
 		m_setting.update();
 		break;
+
 	case SceneManager::kSceneKindEnd:
 		m_end.update();
 		break;
+
 	default:
 		assert(false);
 		break;
@@ -107,6 +147,9 @@ void SceneManager::update() {
 			break;
 		case SceneManager::kSceneKindEnd:
 			m_end.end();
+			break;
+		case SceneManager::kSceneKindPose:
+			m_scenePose.end();
 			break;
 		case SceneManager::kSceneKindNum:
 		default:
@@ -129,6 +172,9 @@ void SceneManager::draw() {
 		break;
 	case SceneManager::kSceneKindEnd:
 		m_end.draw();
+		break;
+	case SceneManager::kSceneKindPose:
+		m_scenePose.draw();
 		break;
 	case SceneManager::kSceneKindNum:
 	default:

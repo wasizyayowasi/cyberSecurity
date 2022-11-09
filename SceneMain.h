@@ -1,7 +1,9 @@
 #pragma once
 #include "SceneBase.h"
+#include "Player.h"
+#include "ScenePose.h"
 
-class SceneMain : public SceneBase
+class SceneMain 
 {
 public:
 	SceneMain()
@@ -13,11 +15,11 @@ public:
 	virtual ~SceneMain() {}
 
 
-	virtual void init();
-	virtual void end() {}
+	void init();
+	void end();
 
-	virtual void update();
-	virtual void draw();
+	int update();
+	void draw();
 
 	virtual bool isEnd() { return m_isEnd; }
 private:
@@ -26,4 +28,8 @@ private:
 	int m_textVecX;
 
 	bool m_isEnd;
+
+	Player m_player;
+
+	ScenePose m_scenePose;
 };

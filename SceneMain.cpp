@@ -7,31 +7,28 @@ void SceneMain::init()
 	m_textPosX = 0;
 	m_textVecX = 4;
 
+	//m_player.init();
+
 	m_isEnd = false;
 }
 
-void SceneMain::update()
-{
-	// •¶š‚ÌˆÚ“®
-	m_textPosX += m_textVecX;
-	if (m_textPosX < 0)
-	{
-		m_textPosX = 0;
-		m_textVecX = 4;
-	}
-	if (m_textPosX > 300)
-	{
-		m_textPosX = 300;
-		m_textVecX = -4;
-	}
+void SceneMain::end() {
+	//m_player.end();
+}
 
-	if (Pad::isTrigger(PAD_INPUT_1))
-	{
+int SceneMain::update()
+{
+	//m_player.update();
+	if (Pad::isPress(PAD_INPUT_7)) {
 		m_isEnd = true;
+		return 1;
 	}
+	return 0;
 }
 
 void SceneMain::draw()
 {
 	DrawString(m_textPosX, 0, "ƒƒCƒ“‰æ–Ê", GetColor(255, 255, 255));
+	//m_player.draw();
+
 }

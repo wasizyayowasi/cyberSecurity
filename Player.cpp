@@ -3,7 +3,6 @@
 #include "game.h"
 
 namespace {
-	const char* const kPlayerFilename = "data/player.png";
 	//キャラクターアニメーション1コマ当たりのフレーム数
 	constexpr int kAnimeChangeFrame = 8;
 }
@@ -11,38 +10,24 @@ namespace {
 Player::Player() :
 	m_animeNo(0),
 	m_animeFrame(0),
-	m_animeDirections(0)
+	m_animeDirections(0),
+	m_pos()
 {
-	
+	for (auto& handle : m_handle) {
+		handle = -1;
+	}
 }
 
 Player::~Player() {
-
+	
 }
 
 void Player::init() {
 
-	for (auto& handle : m_handle) {
-		handle = -1;
-	}
-	for (auto& graphicHandle : m_graphicHandle) {
-		graphicHandle = -1;
-	}
-
-	LoadDivGraph(kPlayerFilename, kGraphicDivNum, kGraphicDivX, kGraphicDivY, kGraphicSizeX, kGraphicSizeY, m_graphicHandle);
-
-	for (int i = 0; i < kGraphicDivNum; i++) {
-		m_handle[i] = m_graphicHandle[i];
-	}
-	
-	m_pos.x = 0;
-	m_pos.y = 0;
 }
 
 void Player::end() {
-	for (auto& handle : m_handle) {
-		DeleteGraph(handle);
-	}
+	
 }
 
 void Player::update() {
@@ -90,5 +75,6 @@ void Player::update() {
 }
 
 void Player::draw() {
+	DrawBox(m_pos.x, m_pos.y, m_pos.x + 32, m_pos.y + 32, GetColor(255, 0, 0), false);
 	DrawGraph(m_pos.x, m_pos.y, m_handle[m_animeNo], true);
 }

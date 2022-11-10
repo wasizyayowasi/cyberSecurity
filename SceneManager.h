@@ -16,7 +16,7 @@ public:
 		kSceneKindSetting,
 		kSceneKindEnd,
 
-		kSceneKindPose,
+		kSceneKindPause,
 
 		kSceneKindNum
 	}SceneKind;
@@ -47,5 +47,5 @@ private:
 
 	SceneEnd m_end;
 
-	ScenePause m_scenePose;
+	ScenePause m_scenePause;
 };

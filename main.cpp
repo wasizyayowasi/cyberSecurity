@@ -33,7 +33,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		LONGLONG time = GetNowHiPerformanceCount();
 		//‰æ–Ê‚ÌƒNƒŠƒA
 		ClearDrawScreen();
-		
+
 		scene.update();
 		scene.draw();
 

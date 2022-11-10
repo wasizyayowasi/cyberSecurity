@@ -6,11 +6,18 @@
 class SceneMain 
 {
 public:
+	
+public:
 	SceneMain()
 	{
 		m_textPosX = 0;
 		m_textVecX = 0;
 		m_isEnd = false;
+
+		for (auto& handle : m_hPlayerGraphic) {
+			handle = -1;
+		}
+
 	}
 	virtual ~SceneMain() {}
 
@@ -28,6 +35,15 @@ private:
 	int m_textVecX;
 
 	bool m_isEnd;
+
+	//グラフィック
+	int m_hPlayerGraphic[Player::kGraphicDivNum];
+
+	//キャラクターのアニメーション
+	int m_animeNo;			//表示する番号
+	int m_animeFrame;
+	int m_animeDirections;	//表示する方向
+
 
 	Player m_player;
 

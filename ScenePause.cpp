@@ -5,6 +5,7 @@
 void ScenePause::init()
 {
 	m_isEnd = false;
+
 }
 
 void ScenePause::end() {
@@ -13,8 +14,8 @@ void ScenePause::end() {
 
 int ScenePause::update()
 {
-	DrawString(0, 30, "2", GetColor(255, 255, 255));
-	if (Pad::isPress(PAD_INPUT_8)) {
+	
+	if (Pad::isPress(PAD_INPUT_2)) {
 		m_isEnd = true;
 		return 1;
 	}

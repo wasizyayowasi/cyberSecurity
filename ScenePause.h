@@ -18,7 +18,7 @@ public:
 
 	virtual bool isEnd() { return m_isEnd; }
 private:
-	
+
 	int m_num;
 
 	bool m_isEnd;

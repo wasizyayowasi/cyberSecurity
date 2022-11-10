@@ -13,7 +13,7 @@ void SceneTitle::init()
 	m_menu.addItem("終了");
 	//m_menu.addItem("デバッグ");
 
-	m_menu.setPos(800, 500);
+	m_menu.setPos(500, 250);
 
 	m_menu.setUpCursor();
 }
